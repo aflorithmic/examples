@@ -22,17 +22,17 @@ response = aflr.Speech().create(
 )
 print(f"Response from text-to-speech: \n {response} \n")
 
-# # mastering process
+# mastering process
 response = aflr.Mastering().create(
     scriptId=scriptId, backgroundTrackId="full__tropics.wav", audience=audience
 )
 print(f"Response from mastering: \n {response} \n")
 
-# # get url of audio tracks generated
+# get url of audio tracks generated
 url = aflr.Mastering().retrieve(scriptId=scriptId, parameters=audience[0])
 print(f"url to download the track: \n {url} \n")
 
-# # or download
+# or download
 file = aflr.Mastering().download(
     scriptId=scriptId, parameters=audience[0], destination="."
 )
