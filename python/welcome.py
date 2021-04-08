@@ -1,14 +1,14 @@
 import aflr
 
 aflr.api_key = "your-key"  # or define env variable: export aflr_key=<your-key>
-text = "<<sectionName::welcome>> Hey {{username}}, welcome to my fitness app!"
+text = "<<sectionName::welcome>> Hey {{username}}, welcome to my workout app!"
 audience = [{"username": "John"}]
 
 # script creation
 script = aflr.Script().create(
     scriptText=text,
-    projectName="examples",
-    moduleName="fitness",
+    projectName="workout_app",
+    moduleName="welcome",
     scriptName="welcome-message",
 )
 print(f"Script created: \n {script} \n")
