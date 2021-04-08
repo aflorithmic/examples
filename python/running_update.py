@@ -29,7 +29,6 @@ print(f"Response from text-to-speech: \n {response} \n")
 url = aflr.Speech().retrieve(scriptId=scriptId)
 print(f"url to download the speech track: \n {url} \n")
 
-
 ### OPTIONAL, get the mastered track.
 # # create mastering
 # aflr.Mastering().create(
