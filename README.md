@@ -15,6 +15,6 @@
 
 All python examples use the official <a href="https://github.com/aflorithmic/aflr_python" rel="noopener"> aflr python SDK </a>
 
-| Example                                                                                                         | Industry |
-| :-------------------------------------------------------------------------------------------------------------- | :------- |
-| [Personalised welcome audio message](https://...) <br/> Give a warm welcome to your users, using the user name. | Fitness  |
+| Example                                                                                                      | Industry |
+| :----------------------------------------------------------------------------------------------------------- | :------- |
+| [Personalised welcome audio message](https://...) <br/> Give a warm welcome to your users, using their name. | Fitness  |
