@@ -20,3 +20,6 @@ All python examples use the official <a href="https://github.com/aflorithmic/afl
 | [Welcome audio message](https://github.com/aflorithmic/examples/blob/main/python/welcome.py) <br/> Give a warm welcome to your users, using their name as personalisation parameter.      | 🏃‍♂️Fitness  |
 | [Running update](https://github.com/aflorithmic/examples/blob/main/python/running_update.py) <br/> A running audio update using name, speed and heart rate as personalisation parameters. | 🏃‍♂️Fitness  |
 | [Voucher code](https://github.com/aflorithmic/examples/blob/main/python/voucher_code.py) <br/> A voucher code audio generator with voices and background tracks personalised depending on the user preferences. | ✨MarTech  |
+
+## Documentation
+Find the detailed documentation on https://docs.api.audio
