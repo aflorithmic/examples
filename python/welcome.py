@@ -1,6 +1,6 @@
 import aflr
-
 aflr.api_key = "your-key"  # or define env variable: export aflr_key=<your-key>
+
 text = "<<sectionName::welcome>> Hey {{username}}, welcome to my workout app!"
 audience = [{"username": "John"}]
 

@@ -1,6 +1,6 @@
 import aflr
-
 aflr.api_key = "your-key"  # or define env variable: export aflr_key=<your-key>
+
 text = "<<sectionName::update>> Hey {{username}}, you are running at {{speed}} minutes per km and your heart rate is {{bpm}}."
 audience = [{"username": "matt", "speed": "4:40", "bpm": "152"}]
 
