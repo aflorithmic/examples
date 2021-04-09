@@ -22,4 +22,4 @@ All python examples use the official <a href="https://github.com/aflorithmic/afl
 | [Voucher code](https://github.com/aflorithmic/examples/blob/main/python/voucher_code.py) <br/> A voucher code audio generator with voices and background tracks personalised depending on the user preferences. | ✨MarTech  |
 
 ## Documentation
-Find the detailed documentation on https://docs.api.audio
+Find the detailed documentation on [docs.api.audio](https://docs.api.audio)
