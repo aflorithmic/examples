@@ -21,7 +21,7 @@ All python examples use the official <a href="https://github.com/aflorithmic/afl
 | [Running update](https://github.com/aflorithmic/examples/blob/main/python/running_update.py) <br/> A running audio update using name, speed and heart rate as personalisation parameters. | 🏃‍♂️Fitness  |
 | [Voucher code](https://github.com/aflorithmic/examples/blob/main/python/voucher_code.py) <br/> A voucher code audio generator with voices and background tracks personalised depending on the user preferences. | ✨MarTech  |
 | [Voicemail](https://github.com/aflorithmic/examples/blob/main/python/voicemail.py) <br/> A voicemail message with personalisation for names and various preferences. | ✨SalesOps  |
-| [Voicemail](https://github.com/aflorithmic/examples/blob/main/python/genuis_and_aflr_api.py) <br/> Combining the Genius and Aflorithmic API to generate your favourite song with our voice | Music |
+| [Voicemail](https://github.com/aflorithmic/examples/blob/main/python/genuis_and_aflr_api.py) <br/> Combining the Genius and Aflorithmic API to generate your favourite song with our voice | 🎵Music |
 
 ## Documentation
 Find the detailed documentation on [docs.api.audio](https://docs.api.audio)
