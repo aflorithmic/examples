@@ -1,9 +1,9 @@
 import lyricsgenius as genius
 import re 
-import aflr
+import apiaudio
 from argparse import ArgumentParser
 
-aflr.api_key = "your-key"  # or define env variable: export aflr_key=<your-key>
+apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
 geniusCreds = "your-genuis-client-access-token" #check https://docs.genius.com/#/getting-started-h1 to get an API key
 
 def multiple_replace(dict, text): #function to replace using a dictionary rather then just single strings
@@ -12,21 +12,21 @@ def multiple_replace(dict, text): #function to replace using a dictionary rather
 
 def main(args):
     '''py script that allows to call the Genuis API to call retrieve lyrics from your favourite
-       and render them trough the AFLR API
+       and render them trough the apiaudio API
        
        sample usage from CLI:
-       python python/genuis_and_aflr_api.py -a "Eminem" -s 'The Real Slim Shady' -v 'Joanna' -m 'full__fargalaxy_dark_father.wav' -e 'dark_father' 
+       python python/genius_and_apiaudio.py -a "Eminem" -s 'The Real Slim Shady' -v 'Joanna' -m 'full__fargalaxy_dark_father.wav' -e 'dark_father' 
        
        paramter
        -a   --artist            artist who sings your song, example: "Eminem"
        -s   --song              song from the given artist, example: "The Real Slim Shady"
-       -v   --aflr_voice        voice from the AFLR API, example: "Joanna"
+       -v   --voice        voice from API.audio, example: "Joanna"
        -m   --mastering_sound   mastering background track, example: "full__fargalaxy_dark_father.wav"
        -e   --effect            efffect you want to apply over your voice, example: "dark_father"
     '''
     
-    #print(aflr.Voice().list()) #use to print all available voices  
-    #print(aflr.Sound().list()) #use to print all available background tracks
+    #print(apiaudio.Voice().list()) #use to print all available voices  
+    #print(apiaudio.Sound().list()) #use to print all available background tracks
     
     genius_api = genius.Genius(geniusCreds)
     song = genius_api.search_song(title=args.song, artist=args.artist, song_id=None, get_full_info=True) #find the wanted song from a given artist
@@ -47,26 +47,26 @@ def main(args):
     
     
     # Create a new script and print the script created
-    script = aflr.Script().create(
+    script = apiaudio.Script().create(
         scriptText="<<sectionName::lyrics>> " + lyrics[:500], #full songs with background track can be quite difficult to handle thus we only render the first 500 characters
     )
 
     # create a text-to-speech
-    response = aflr.Speech().create(scriptId=script["scriptId"],
+    response = apiaudio.Speech().create(scriptId=script["scriptId"],
                                     voice=args.aflr_voice, #define voice
                                     speed=str(150), #define voice speed
                                     effect=args.effect, #define effects
                                     )
     print('response: ', response)
     
-    audio_files = aflr.Speech().download(scriptId=script["scriptId"], destination=".") #download raw speech
+    audio_files = apiaudio.Speech().download(scriptId=script["scriptId"], destination=".") #download raw speech
     
-    aflr.Mastering().create(
+    apiaudio.Mastering().create(
 	scriptId=script.get("scriptId"),
 	backgroundTrackId=args.mastering_sound #define mastering background track
 	)
     
-    url = aflr.Mastering().download(scriptId=script.get("scriptId"), destination=".") #download mastered speech
+    url = apiaudio.Mastering().download(scriptId=script.get("scriptId"), destination=".") #download mastered speech
 
 
 if __name__ == "__main__":
@@ -87,11 +87,11 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-v",
-        "--aflr_voice",
+        "--voice",
         type=str,
         required=False,
         default="Joanna",
-        help="voice for inference through aflr API",
+        help="voice for inference through apiaudio API",
     )
     parser.add_argument(
         "-m",
