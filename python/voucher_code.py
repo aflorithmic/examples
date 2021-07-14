@@ -1,10 +1,10 @@
-import aflr
-aflr.api_key = "your-key" # or define env variable: export aflr_key=<your-key>
+import apiaudio
+apiaudio.api_key = "your-key" # or define env variable: export apiaudio_key=<your-key>
 
 def get_voucher_audio(scriptId, audience, voice, background_track):
 	print(f"⏳ Creating voucher audio for {audience[0]['username']}")
 	# text to speech creation
-	aflr.Speech().create(
+	apiaudio.Speech().create(
 		scriptId=scriptId,
 		voice=voice,
 		speed="110",
@@ -12,14 +12,14 @@ def get_voucher_audio(scriptId, audience, voice, background_track):
 		)
 
 	# create mastering
-	aflr.Mastering().create(
+	apiaudio.Mastering().create(
 		scriptId=scriptId,
 		backgroundTrackId=background_track,
 		audience=audience
 		)
 
 	# retrieve mastered file
-	filepath = aflr.Mastering().download(
+	filepath = apiaudio.Mastering().download(
 		scriptId=scriptId,
 		parameters=audience[0]
 		)
@@ -33,7 +33,7 @@ users = [
 ]
 
 text = "Hey {{username}}, Thanks for reaching out from {{location}}. Your voucher code is {{voucher}}. I will repeat one more time for you, {{username}}, your voucher code is {{voucher}}"
-script = aflr.Script().create(
+script = apiaudio.Script().create(
 	scriptText=text,
 	projectName="voucher_app",
 	moduleName="winter_campaign",
