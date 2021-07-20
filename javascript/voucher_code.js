@@ -1,4 +1,4 @@
-const Aflr = require("aflr").default;
+const apiaudio = require("apiaudio").default;
 const https = require("https");
 const fs = require("fs");
 
@@ -7,7 +7,7 @@ const YOUR_API_KEY = "-";
 async function get_voucher_audio(scriptId, audience, voice, background_track) {
   console.log(`Creating voucher audio for ${audience[0]["username"]}`);
   try {
-    let speech = await Aflr.Speech.create({
+    let speech = await apiaudio.Speech.create({
       scriptId: scriptId,
       voice: voice,
       speed: "110",
@@ -17,14 +17,14 @@ async function get_voucher_audio(scriptId, audience, voice, background_track) {
     console.log(speech);
 
     //  OPTIONAL, get the mastered track.
-    let mastering = await Aflr.Mastering.create({
+    let mastering = await apiaudio.Mastering.create({
       scriptId: scriptId,
       backgroundTrackId: background_track,
       audience: audience,
     });
     console.log(mastering);
     console.log(audience);
-    let masteringResult = await Aflr.Mastering.retrieve(scriptId, audience[0]);
+    let masteringResult = await apiaudio.Mastering.retrieve(scriptId, audience[0]);
     // get url of audio tracks generated
     console.log(
       `url to download the track with username ${audience[0]["username"]}: \n ${masteringResult["url"]} \n`
@@ -85,8 +85,8 @@ async function voucher() {
   try {
     const text =
       "Hey {{username}}, Thanks for reaching out from {{location}}. Your voucher code is {{voucher}}. I will repeat one more time for you, {{username}}, your voucher code is {{voucher}}";
-    Aflr.configure({ apiKey: YOUR_API_KEY });
-    let script = await Aflr.Script.create({
+    apiaudio.configure({ apiKey: YOUR_API_KEY });
+    let script = await apiaudio.Script.create({
       scriptText: text,
       projectName: "voucher_app",
       moduleName: "winter_campaign",

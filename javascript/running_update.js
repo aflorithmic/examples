@@ -1,15 +1,15 @@
-const Aflr = require("aflr").default;
+const apiaudio = require("apiaudio").default;
 const https = require("https");
 const fs = require("fs");
 
-async function aflr_create() {
+async function apiaudio_create() {
   const YOUR_API_KEY = "-";
   const text =
     "<<sectionName::update>> Hey {{username}}, you are running at {{speed}} minutes per km and your heart rate is {{bpm}}.";
   const audience = [{ username: "matt", speed: "4:40", bpm: "152" }];
   try {
-    Aflr.configure({ apiKey: YOUR_API_KEY });
-    let script = await Aflr.Script.create({
+    apiaudio.configure({ apiKey: YOUR_API_KEY });
+    let script = await apiaudio.Script.create({
       scriptText: text,
       projectName: "workout_app",
       moduleName: "running",
@@ -17,7 +17,7 @@ async function aflr_create() {
     });
     console.log("Script created");
 
-    let speech = await Aflr.Speech.create({
+    let speech = await apiaudio.Speech.create({
       scriptId: script["scriptId"],
       voice: "Joanna",
       speed: "110",
@@ -25,13 +25,13 @@ async function aflr_create() {
     });
     console.log(`Response from text-to-speech: ${speech["message"]}`);
 
-    let url = await Aflr.Speech.retrieve((scriptId = script["scriptId"]));
+    let url = await apiaudio.Speech.retrieve((scriptId = script["scriptId"]));
     console.log(`Response from text-to-speech: ${url["update"]}`);
 
     // OPTIONAL, get the mastered track.
     // // Create Mastering
 
-    let mastering = await Aflr.Mastering.create({
+    let mastering = await apiaudio.Mastering.create({
       scriptId: script["scriptId"],
       backgroundTrackId: "full__deepsea.wav",
       audience: audience,
@@ -39,7 +39,7 @@ async function aflr_create() {
     console.log(`url to download the speech track: ${mastering["Message"]}`);
 
     // // Get Url
-    let masteringResult = await Aflr.Mastering.retrieve(
+    let masteringResult = await apiaudio.Mastering.retrieve(
       script["scriptId"],
       audience[0]
     );
@@ -67,7 +67,7 @@ function downloadUrl(fileName, url_mp3) {
 
 async function running_update() {
   try {
-    const url_mp3 = await aflr_create();
+    const url_mp3 = await apiaudio_create();
     downloadUrl("default", url_mp3);
   } catch (e) {
     console.log(e);

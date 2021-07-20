@@ -1,5 +1,5 @@
 const Genius = require("genius-lyrics");
-const Aflr = require("aflr").default;
+const apiaudio = require("apiaudio").default;
 
 const YOUR_API_KEY = "-";
 const geniusCreds = "-"; // check https://docs.genius.com/#/getting-started-h1 to get an API key
@@ -11,24 +11,24 @@ args = {
   backgroundTrackId: "full__heatwave.wav",
 };
 
-async function aflr_getURL(lyrics) {
+async function apiaudio_getURL(lyrics) {
   try {
-    Aflr.configure({ apiKey: YOUR_API_KEY });
-    const script = await Aflr.Script.create({
+    apiaudio.configure({ apiKey: YOUR_API_KEY });
+    const script = await apiaudio.Script.create({
       scriptText: lyrics,
     });
     console.log(script);
-    const response = await Aflr.Speech.create({
+    const response = await apiaudio.Speech.create({
       scriptId: script["scriptId"],
       voice: args.voice, // define voice speed
       speed: "70", // define voice speed
     });
-    const audio_files = await Aflr.Speech.retrieve(script["scriptId"]); // retrieve url
-    Aflr.Mastering.create({
+    const audio_files = await apiaudio.Speech.retrieve(script["scriptId"]); // retrieve url
+    apiaudio.Mastering.create({
       scriptId: script["scriptId"],
       backgroundTrackId: args.backgroundTrackId, // define mastering background track
     });
-    const url = await Aflr.Mastering.retrieve(script["scriptId"]); // retrieve mastered speech
+    const url = await apiaudio.Mastering.retrieve(script["scriptId"]); // retrieve mastered speech
     console.log(url["url"]);
   } catch (e) {
     console.log(e);
@@ -69,7 +69,7 @@ async function main() {
   try {
     var lyrics = await genius();
     console.log(lyrics);
-    await aflr_getURL(lyrics);
+    await apiaudio_getURL(lyrics);
   } catch (e) {
     console.log(e);
   }
