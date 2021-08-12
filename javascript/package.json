@@ -1,0 +1,16 @@
+{
+  "name": "apiaudio_js_examples",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "apiaudio": "^0.5.1",
+    "genius-lyrics": "^4.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

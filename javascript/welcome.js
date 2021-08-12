@@ -1,13 +1,13 @@
-const Aflr = require("aflr").default;
+const apiaudio = require("apiaudio").default;
 
-async function aflr_create() {
+async function apiaudio_create() {
   const YOUR_API_KEY = "";
   const audience = [{ username: "John" }];
   const text =
     "<<sectionName::welcome>> Hey {{username}}, welcome to my workout app!";
   try {
-    Aflr.configure({ apiKey: YOUR_API_KEY });
-    let script = await Aflr.Script.create({
+    apiaudio.configure({ apiKey: YOUR_API_KEY });
+    let script = await apiaudio.Script.create({
       scriptText: text,
       projectName: "workout_app",
       moduleName: "welcome",
@@ -15,7 +15,7 @@ async function aflr_create() {
     });
     console.log(script);
 
-    let speech = await Aflr.Speech.create({
+    let speech = await apiaudio.Speech.create({
       scriptId: script["scriptId"],
       voice: "Joanna",
       speed: "110",
@@ -23,14 +23,14 @@ async function aflr_create() {
     });
     console.log(`Response from text-to-speech: ${speech["message"]}`);
 
-    let mastering = await Aflr.Mastering.create({
+    let mastering = await apiaudio.Mastering.create({
       scriptId: script["scriptId"],
       backgroundTrackId: "full__tropics.wav",
       audience: audience,
     });
     console.log(`Response from mastering: : ${mastering["Message"]}`);
 
-    let masteringResult = await Aflr.Mastering.retrieve(
+    let masteringResult = await apiaudio.Mastering.retrieve(
       script["scriptId"],
       audience[0]
     );
@@ -41,4 +41,4 @@ async function aflr_create() {
   }
 }
 
-const url = aflr_create();
+const url = apiaudio_create();
