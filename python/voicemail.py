@@ -26,7 +26,7 @@ print(f"Response from text-to-speech: \n {response} \n")
 
 # mastering process
 response = apiaudio.Mastering().create(
-    scriptId=scriptId, backgroundTrackId="full__deepsea.wav", audience=audience
+    scriptId=scriptId, soundTemplate="summerlove", audience=audience
 )
 print(f"Response from mastering: \n {response} \n")
 
