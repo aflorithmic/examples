@@ -33,7 +33,7 @@ print(f"url to download the speech track: \n {url} \n")
 # # create mastering
 # apiaudio.Mastering().create(
 #     scriptId=scriptId,
-#     backgroundTrackId="full__deepsea.wav",
+#     soundTemplate="heatwave",
 #     audience=audience,
 # )
 # print(f"Response from mastering: \n {response} \n")
