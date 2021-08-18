@@ -1,7 +1,7 @@
 import apiaudio
 apiaudio.api_key = "your-key" # or define env variable: export apiaudio_key=<your-key>
 
-def get_voucher_audio(scriptId, audience, voice, background_track):
+def get_voucher_audio(scriptId, audience, voice, template):
 	print(f"⏳ Creating voucher audio for {audience[0]['username']}")
 	# text to speech creation
 	apiaudio.Speech().create(
@@ -14,7 +14,7 @@ def get_voucher_audio(scriptId, audience, voice, background_track):
 	# create mastering
 	apiaudio.Mastering().create(
 		scriptId=scriptId,
-		backgroundTrackId=background_track,
+		soundTemplate=template,
 		audience=audience
 		)
 
@@ -26,10 +26,10 @@ def get_voucher_audio(scriptId, audience, voice, background_track):
 	return filepath
 
 users = [
-	{"username": "bjorn", "location": "barcelona", "voucher": "1 2 3", "background_track": "full__citynights.wav", "voice": "Brian"},
-	{"username": "matt", "location": "barcelona", "voucher": "4 5 6", "background_track": "full__deepsea.wav", "voice": "Joey"},
-	{"username": "lars", "location": "berlin", "voucher": "7 8 9", "background_track": "full__geneticcode.wav", "voice": "Matthew"},
-	{"username": "peadar", "location": "luxemburg", "voucher": "a b c", "background_track": "full__sundaymorning.wav", "voice": "Justin"},
+	{"username": "bjorn", "location": "barcelona", "voucher": "1 2 3", "template": "citynights", "voice": "Brian"},
+	{"username": "matt", "location": "barcelona", "voucher": "4 5 6", "template": "curtaincall", "voice": "Joey"},
+	{"username": "lars", "location": "berlin", "voucher": "7 8 9", "template": "hourglass", "voice": "Matthew"},
+	{"username": "peadar", "location": "luxemburg", "voucher": "a b c", "template": "openup", "voice": "Justin"},
 ]
 
 text = "Hey {{username}}, Thanks for reaching out from {{location}}. Your voucher code is {{voucher}}. I will repeat one more time for you, {{username}}, your voucher code is {{voucher}}"
@@ -50,7 +50,7 @@ for user in users:
 		scriptId=scriptId,
 		audience=audience,
 		voice=user["voice"],
-		background_track=user["background_track"]
+		template=user["template"]
 	)
 	files.append(file)
 	print(f"✅ {count}/{len(users)} Files produced. File location: {file}")
