@@ -33,7 +33,7 @@ async function apiaudio_create() {
 
     let mastering = await apiaudio.Mastering.create({
       scriptId: script["scriptId"],
-      backgroundTrackId: "full__deepsea.wav",
+      soundTemplate: "parisianmorning",
       audience: audience,
     });
     console.log(`url to download the speech track: ${mastering["Message"]}`);
