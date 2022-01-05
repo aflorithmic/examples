@@ -4,7 +4,7 @@ const fs = require("fs");
 
 async function apiaudio_create() {
   const YOUR_API_KEY = "-";
-  const text = `<<sectionName::welcome>><<soundTemplate::intro>> Hey {{name}}, this is Evan Fleming calling from {{phonenumber}}.
+  const text = `<<sectionName::intro>><<soundTemplate::intro>> Hey {{name}}, this is Evan Fleming calling from {{phonenumber}}.
   <<sectionName::main>> <<soundSegment::main>>I thought of you because I’m working with an active footwear brand that’s seen about a 
   {{percent}} percent increase in reorders, and I think that I could help your brand do the same, 
   but I’m not exactly sure. 
