@@ -25,16 +25,15 @@ r = apiaudio.Speech().create(
      sections={
         "intro": {
             "voice": "Beth",
-            "speed": 110,
-            "silence_padding": 1000
+            "speed": 110
         },
         "main": {
             "voice": "Guy",
-            "speed": 100,
+            "speed": 100
         },
         "outro": {
             "voice": "Hunter",
-            "speed": 100,
+            "speed": 100
         }
      }
 )
