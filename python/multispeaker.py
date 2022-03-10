@@ -5,40 +5,42 @@ apiaudio.api_key="your_key"
 text = """
 	<<soundSegment::intro>>
 	<<sectionName::intro>> 
-	Hey! Do you know we support multiple voices from different providers in the same script? I am a polly voice from Amazon. 
+	Hey! Do you know we support multiple voices from different providers in the same script? My name is Sonia. I am from Microsoft! 
 	<<soundSegment::main>>
 	<<sectionName::main>> 
-	I am Azure voice from Microsoft. I think Azure voices sound awesome.
+	And my name is Austin! I am a Resemble provided voice. Try me out!
 	<<soundSegment::outro>>
 	<<sectionName::outro>>
-	And I am a voice from Google. What do you think? 
+	Nice to meet you! I am Beth and I come from amazon! Try our voices out with your own script
 """
+
 script = apiaudio.Script().create(scriptText=text, scriptName="multiple_speakers")
 print(script) 
 
-# Create text to speech 
-r = apiaudio.Speech().create(
+# Create text to speech !
+
+speech = apiaudio.Speech().create(
     scriptId=script["scriptId"],
     voice="Linda",
-    speed=90,
-    silence_padding=0,
      sections={
         "intro": {
-            "voice": "Beth",
-            "speed": 110
+            "voice": "Sonia",
+            "speed": 100 ,
         },
         "main": {
-            "voice": "Guy",
-            "speed": 100
+            "voice": "Austin",
+            "speed": 90 ,
         },
         "outro": {
-            "voice": "Hunter",
-            "speed": 100
+            "voice": "Beth",
+            "speed": 100  ,
         }
      }
 )
-print(r)
 
 # Mastering creation 
-r = apiaudio.Mastering().create(scriptId=script["scriptId"], soundTemplate="copacabana")
-print(r)
+
+mastering = apiaudio.Mastering().create(scriptId=script["scriptId"], soundTemplate="lofi")
+
+file = apiaudio.Mastering().download(scriptId=script["scriptId"])
+print(file)
