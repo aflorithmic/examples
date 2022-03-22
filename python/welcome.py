@@ -1,4 +1,5 @@
 import apiaudio
+
 apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
 
 text = "<<sectionName::welcome>> Hey {{username}}, welcome to my workout app!"

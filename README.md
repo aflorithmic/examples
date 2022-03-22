@@ -8,7 +8,7 @@
 ---
 
 <p align="center"> A collection of ready-to-deploy examples for <a href="https://www.api.audio/" rel="noopener">api.audio</a> using <a href="https://github.com/aflorithmic/aflr_python" rel="noopener"> aflr python SDK </a> and <a href="https://github.com/aflorithmic/aflr_npm" rel="noopener">aflr javascript SDK</a>.
-    <br> 
+    <br>
 </p>
 
 ## Python examples

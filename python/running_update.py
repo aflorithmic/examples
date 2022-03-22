@@ -1,4 +1,5 @@
 import apiaudio
+
 apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
 
 text = "<<sectionName::update>> Hey {{username}}, you are running at {{speed}} minutes per km and your heart rate is {{bpm}}."
@@ -18,10 +19,7 @@ scriptId = script["scriptId"]
 
 # text to speech creation
 response = apiaudio.Speech().create(
-    scriptId=scriptId,
-    voice="Joanna",
-    speed="110",
-    audience=audience,
+    scriptId=scriptId, voice="Joanna", speed="110", audience=audience,
 )
 print(f"Response from text-to-speech: \n {response} \n")
 

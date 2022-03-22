@@ -1,10 +1,11 @@
 import apiaudio
+
 apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
 text = """<<sectionName::welcome>> Hey {{name}}, this is Evan Fleming calling from {{phonenumber}}.
- I thought of you because I’m working with an active footwear brand that’s seen about a 
- {{percent}} percent increase in reorders, and I think that I could help your brand do the same, 
+ I thought of you because I’m working with an active footwear brand that’s seen about a
+ {{percent}} percent increase in reorders, and I think that I could help your brand do the same,
  but I’m not exactly sure. So if you could give me a call back at {{phonenumber}}. Again, this is Evan. Thanks!"""
-audience = [{"name": "Shelley", "percent": "20", "phonenumber":"1-2-3-4-5-6-7"}]
+audience = [{"name": "Shelley", "percent": "20", "phonenumber": "1-2-3-4-5-6-7"}]
 
 # script creation
 script = apiaudio.Script().create(
