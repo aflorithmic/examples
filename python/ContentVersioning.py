@@ -16,6 +16,7 @@ They have just added two new tour dates to their previously sold-out concert in 
 <<soundSegment::outro>><<sectionName::outro>>
 Head over to buytickets.com to grab your tickets before they sell out!
 """
+
 for audience in audience_params:
 
     script = apiaudio.Script.create(
