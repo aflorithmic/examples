@@ -23,14 +23,14 @@ response = apiaudio.Speech().create(
 )
 print(f"Response from text-to-speech: \n {response} \n")
 
-# mastering process
+# master your file and get the url 
 response = apiaudio.Mastering().create(
     scriptId=scriptId, soundTemplate="heatwave", audience=audience
 )
 print(f"Response from mastering: \n {response} \n")
 
 
-# or download
+# or download your file 
 file = apiaudio.Mastering().download(
     scriptId=scriptId, parameters=audience[0], destination="."
 )
