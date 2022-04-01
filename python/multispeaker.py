@@ -24,9 +24,9 @@ speech = apiaudio.Speech().create(
     scriptId=script["scriptId"],
     voice="Linda",
     sections={
-        "intro": {"voice": "Sonia", "speed": 100,},
-        "main": {"voice": "Austin", "speed": 90,},
-        "outro": {"voice": "Beth", "speed": 100,},
+        "intro": {"voice": "Sonia", "speed": 100},
+        "main": {"voice": "Austin", "speed": 90},
+        "outro": {"voice": "Beth", "speed": 100},
     },
 )
 
