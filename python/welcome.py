@@ -19,21 +19,18 @@ scriptId = script["scriptId"]
 
 # speech creation
 response = apiaudio.Speech().create(
-    scriptId=scriptId, voice="Joanna", speed="110", audience=audience
+    scriptId=scriptId, voice="sonia", speed="110", audience=audience
 )
 print(f"Response from text-to-speech: \n {response} \n")
 
-# mastering process
+# master your file and get the url 
 response = apiaudio.Mastering().create(
     scriptId=scriptId, soundTemplate="heatwave", audience=audience
 )
 print(f"Response from mastering: \n {response} \n")
 
-# get url of audio tracks generated
-url = apiaudio.Mastering().retrieve(scriptId=scriptId, parameters=audience[0])
-print(f"url to download the track: \n {url} \n")
 
-# or download
+# or download your file 
 file = apiaudio.Mastering().download(
     scriptId=scriptId, parameters=audience[0], destination="."
 )
