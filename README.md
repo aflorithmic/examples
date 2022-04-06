@@ -20,7 +20,7 @@ All python examples use the official <a href="https://github.com/aflorithmic/afl
 | [Welcome audio message](https://github.com/aflorithmic/examples/blob/main/python/welcome.py) <br/> Give a warm welcome to your users, using their name as personalisation parameter.                            | 🏃‍♂️Fitness     |
 | [Newscast](https://github.com/aflorithmic/examples/blob/main/python/NewsCast.py) <br/> A daily 20 second newscast                 |✨MarTech     |
 | [Personalised Ad](https://github.com/aflorithmic/examples/blob/main/python/ContentVersioning.py) <br/> A concert ad personalisated for band names and different cities                                                | ✨SalesOps    |
-| [Multivoice Audio](https://github.com/aflorithmic/examples/blob/main/python/multiVoice.py) <br/> Create audio with multiple speakers                                                                        | 🎵Advertising |
+| [Multivoice Audio](https://github.com/aflorithmic/examples/blob/main/python/multiVoice.py) <br/> Create audio with multiple voices                                                                         | 🎵Advertising |
 | [Voucher code](https://github.com/aflorithmic/examples/blob/main/python/voucher_code.py) <br/> A voucher code audio generator with voices and background tracks personalised depending on the user preferences. | ✨MarTech     |
 
 
