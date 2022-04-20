@@ -13,7 +13,7 @@
 
 ## Python examples
 
-All python examples use the official <a href="https://github.com/aflorithmic/aflr_python" rel="noopener"> aflr python SDK </a>
+All python examples use the official <a href="https://github.com/aflorithmic/aflr_python" rel="noopener"> apiaudio python SDK </a>
 
 | Example                                                                                                                                                                                                         | Industry      |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------ |
