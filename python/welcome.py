@@ -28,7 +28,7 @@ response = apiaudio.Mastering().create(
     scriptId=scriptId, soundTemplate="heatwave", audience=audience, share=True
 )
 
-# Retrieve your mastered file 
+# Check the response
 print('Response from mastering', response)
 
 # Listen and share your audio file 
