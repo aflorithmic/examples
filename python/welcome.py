@@ -23,15 +23,13 @@ response = apiaudio.Speech().create(
 )
 print(f"Response from text-to-speech: \n {response} \n")
 
-# master your file and get the url 
+# master your file
 response = apiaudio.Mastering().create(
-    scriptId=scriptId, soundTemplate="heatwave", audience=audience
+    scriptId=scriptId, soundTemplate="heatwave", audience=audience, share=True
 )
-print(f"Response from mastering: \n {response} \n")
 
+# Retrieve your mastered file 
+print('Response from mastering', response)
 
-# or download your file 
-file = apiaudio.Mastering().download(
-    scriptId=scriptId, parameters=audience[0], destination="."
-)
-print(f"file location: \n {file} \n")
+# Listen and share your audio file 
+print('Listen to your audio here', response['shareUrl'])
