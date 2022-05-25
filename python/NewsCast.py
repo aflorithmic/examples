@@ -3,7 +3,6 @@ import apiaudio
 apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
 
 
-
 # Write your Script text
 text = """
 <<soundSegment::intro>>
@@ -31,19 +30,17 @@ r = apiaudio.Speech().create(
     speed=105
 )
 
-#Master your file and retrieve the URL
+#Master your file 
 template = "headlines"
 response = apiaudio.Mastering().create(
     scriptId=script.get("scriptId"),
     soundTemplate=template,
-    sectionProperties=sectionProperties
+    sectionProperties=sectionProperties,
+    share=True
 )
 
-print(response)
+# Retrieve your file 
+print('Response from mastering', response)
 
-
-# Or download your file 
-# file = apiaudio.Mastering().download(
-#     scriptId=script.get("scriptId"), destination=".")
-
-# print(file)
+# Listen and share your audio file 
+print('Listen to your audio here', response['shareUrl'])
