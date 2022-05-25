@@ -16,7 +16,6 @@ text = """
 """
 
 script = apiaudio.Script().create(scriptText=text, scriptName="multiple_speakers")
-print(script)
 
 # Create text to speech !
 
@@ -33,8 +32,12 @@ speech = apiaudio.Speech().create(
 # Mastering creation
 
 mastering = apiaudio.Mastering().create(
-    scriptId=script["scriptId"], soundTemplate="lofi"
+    scriptId=script["scriptId"], soundTemplate="lofi", share=True
 )
 
-file = apiaudio.Mastering().download(scriptId=script["scriptId"])
-print(file)
+
+# Check the response
+print('Response from mastering', mastering)
+
+# Listen and share your audio file 
+print('Listen to your audio here', mastering['shareUrl'])
