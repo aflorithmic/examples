@@ -33,7 +33,13 @@ for audience in audience_params:
     mastering = apiaudio.Mastering.create(
         scriptId=script.get("scriptId"),
         soundTemplate="house",
-        audience=audience
+        audience=audience,
+        share=True
     )
 
-    print(mastering)
+    
+# Check the response
+    print('Response from mastering', mastering)
+
+# Listen and share your audio file 
+    print('Listen to your audio here', mastering['shareUrl'])
