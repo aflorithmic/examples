@@ -36,14 +36,12 @@ template = "headlines"
 response = apiaudio.Mastering().create(
     scriptId=script.get("scriptId"),
     soundTemplate=template,
-    sectionProperties=sectionProperties
+    sectionProperties=sectionProperties,
+    share=True
 )
 
-print(response)
+# Check the response
+print('Response from mastering', response)
 
-
-# Or download your file 
-# file = apiaudio.Mastering().download(
-#     scriptId=script.get("scriptId"), destination=".")
-
-# print(file)
+# Listen and share your audio file 
+print('Listen to your audio here', response['shareUrl'])
