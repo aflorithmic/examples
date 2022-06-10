@@ -62,9 +62,13 @@ response = apiaudio.Mastering().create(
     soundTemplate=template,
     mediaFiles=[{"boris": "a788990d" , "chris": "cedf5ce3", "depp": "db6a28b3"}],
     matchVoice=True
+    share=True
     )
 
 print(response)
+    
+# Check the response
+    print('Response from mastering', mastering)
 
-#Retrieve your file 
-file= apiaudio.Mastering().download(scriptId=script.get("scriptId"))
+# Listen and share your audio file 
+    print('Listen to your audio here', mastering['shareUrl'])
