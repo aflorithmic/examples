@@ -17,12 +17,12 @@ They have just added two new tour dates to their previously sold-out concert in 
 Head over to buytickets.com to grab your tickets before they sell out!
 """
 
-for audience in audience_params:
-
-    script = apiaudio.Script.create(
+script = apiaudio.Script.create(
         scriptText=text,
         scriptName="concertad"
-    )   
+    )  
+
+for audience in audience_params: 
 
     speech = apiaudio.Speech.create(
         scriptId=script.get("scriptId"),
@@ -38,8 +38,8 @@ for audience in audience_params:
     )
 
     
-# Check the response
+    # Check the response
     print('Response from mastering', mastering)
 
-# Listen and share your audio file 
+    # Listen and share your audio file 
     print('Listen to your audio here', mastering['shareUrl'])
