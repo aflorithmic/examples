@@ -57,7 +57,7 @@ async function apiaudio_create() {
   print("Response from mastering", mastering);
 
   //  Listen and share your audio file
-  print("Listen to your audio here", mastering["shareUrl"]);
+  print("Listen to your audio here", mastering.shareUrl);
 }
 
 apiaudio_create();
