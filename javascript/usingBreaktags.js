@@ -3,7 +3,7 @@ const apiaudio = require("apiaudio").default;
 async function apiaudio_create() {
   apiaudio.configure({ apiKey: "API_KEY" });
 
-  // # script text
+  // script text
   text = `
     <<soundSegment::intro>>
     <<sectionName::INTRO>>
