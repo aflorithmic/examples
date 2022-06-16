@@ -2,8 +2,6 @@ import apiaudio
 
 apiaudio.api_key = "API_KEY"
 
-
-# script text
 text = """
 <<soundSegment::intro>>
 <<sectionName::INTRO>>
@@ -19,9 +17,8 @@ Add as many sections as you need to make your ad more interactive. By adding mor
 <<sectionName::OUTRO>>
 Hyperfast content production with speech, sound design and mastering at your fingertips. Visit Aflorithmic dot A I for more information. 
 """
-# script creation
-script = apiaudio.Script.create(scriptText=text, scriptName="usingBreakTags")
 
+script = apiaudio.Script.create(scriptText=text, scriptName="usingBreakTags")
 
 apiaudio.Speech.create(
     scriptId=script.get("scriptId"),
@@ -54,8 +51,6 @@ mastering = apiaudio.Mastering.create(
     share=True,
 )
 
-# Check the response
 print("Response from mastering", mastering)
 
-# Listen and share your audio file
 print("Listen to your audio here", mastering["shareUrl"])
