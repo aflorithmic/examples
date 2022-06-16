@@ -37,7 +37,6 @@ for audience in audience_params:
         audience=audience,
         share=True
     )
-
     
     # Check the response
     print('Response from mastering', mastering)
