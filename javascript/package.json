@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "apiaudio": "^0.5.1",
+    "apiaudio": "^0.7.4",
     "genius-lyrics": "^4.2.9"
   },
   "devDependencies": {},
