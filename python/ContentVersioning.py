@@ -18,20 +18,21 @@ Head over to buytickets.com to grab your tickets before they sell out!
 """
 
 script = apiaudio.Script.create(
+        scriptId="concert-ad"
         scriptText=text,
-        scriptName="concertad"
+        scriptName="concert-ad"
     )  
 
 for audience in audience_params: 
 
     speech = apiaudio.Speech.create(
-        scriptId=script.get("scriptId"),
+        scriptId="concert-ad",
         voice="sonia",
         audience=audience
     )
 
     mastering = apiaudio.Mastering.create(
-        scriptId=script.get("scriptId"),
+        scriptId="concert-ad",
         soundTemplate="house",
         audience=audience,
         share=True
