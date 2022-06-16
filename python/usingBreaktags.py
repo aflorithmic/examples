@@ -23,7 +23,7 @@ Hyperfast content production with speech, sound design and mastering at your fin
 script = apiaudio.Script.create(scriptText=text, scriptName="usingBreakTags")
 
 
-r = apiaudio.Speech.create(
+apiaudio.Speech.create(
     scriptId=script.get("scriptId"),
     voice="charlie",
     speed=105,
