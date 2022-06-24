@@ -18,7 +18,7 @@ Head over to buytickets.com to grab your tickets before they sell out!
 """
 
 script = apiaudio.Script.create(
-        scriptId="concert-ad"
+        scriptId="concert-ad",
         scriptText=text,
         scriptName="concert-ad"
     )  
