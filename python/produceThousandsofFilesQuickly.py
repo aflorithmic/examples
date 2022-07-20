@@ -14,7 +14,7 @@ audience = {
     "weather": ["rainy", "sunny", "cloudy", "windy"],
     "day": ["monday", "friday", "sunday"],
 }
-mastering_sound_template = "openup"
+mastering_sound_template = "jakarta"
 
 
 def birdcache_v3_speech():
