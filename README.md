@@ -22,6 +22,7 @@ All python examples use the official <a href="https://github.com/aflorithmic/afl
 | [Personalised Ad](https://github.com/aflorithmic/examples/blob/main/python/ContentVersioning.py) <br/> A concert ad personalisated for band names and different cities                                                | ✨SalesOps    |
 | [Multivoice Audio](https://github.com/aflorithmic/examples/blob/main/python/multiVoice.py) <br/> Create audio with multiple voices                                                                         | 🎵Advertising |
 | [Voucher code](https://github.com/aflorithmic/examples/blob/main/python/voucher_code.py) <br/> A voucher code audio generator with voices and background tracks personalised depending on the user preferences. | ✨MarTech     |
+| [Audio at Scale](https://github.com/aflorithmic/examples/blob/main/python/produceThousandsofFilesQuickly.py) <br/> Produce thousands of files in one go |
 
 
 ## Documentation
