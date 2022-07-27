@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://www.api.audio/" rel="noopener">
- <img src="https://d9hhrg4mnvzow.cloudfront.net/www.api.audio/ddeb49ef-logo-api-audio-isolines_10au02y000000000000028.png" alt="api.audio logo"></a>
+ <img src="https://i.ibb.co/VSV3b51/logo-aflorithmic-apiaudio-200px.png" alt="api.audio logo"></a>
 </p>
 
 <h3 align="center">api.audio Examples</h3>
