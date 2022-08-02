@@ -1,6 +1,8 @@
 import apiaudio
+import os
 
-apiaudio.api_key = "your-key"  # or define env variable: export apiaudio_key=<your-key>
+#define env variable: export apiaudio_key="AFLR_API_KEY" or add to your system
+apiaudio.api_key = os.environ["AFLR_API_KEY_PEADAR"]  
 
 audience_params = [
     {"band": "Nickelback", "city": "Berlin"},
@@ -9,11 +11,8 @@ audience_params = [
 ]
 
 text = """
-<<soundSegment::intro>><<sectionName::intro>>
 Great news for all {{band}} fans!
-<<soundSegment::main>><<sectionName::main>>
 They have just added two new tour dates to their previously sold-out concert in {{city}}.
-<<soundSegment::outro>><<sectionName::outro>>
 Head over to buytickets.com to grab your tickets before they sell out!
 """
 
@@ -31,13 +30,13 @@ for audience in audience_params:
         audience=audience
     )
 
+
     mastering = apiaudio.Mastering.create(
         scriptId="concert-ad",
         soundTemplate="house",
         audience=audience,
         share=True
     )
-    
     # Check the response
     print('Response from mastering', mastering)
 
