@@ -2,7 +2,7 @@ import apiaudio
 import os
 
 #define env variable: export apiaudio_key="AFLR_API_KEY" or add to your system
-apiaudio.api_key = os.environ["AFLR_API_KEY_PEADAR"]  
+apiaudio.api_key = os.environ["AFLR_API_KEY"]  
 
 audience_params = [
     {"band": "Nickelback", "city": "Berlin"},
