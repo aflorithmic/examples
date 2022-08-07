@@ -26,7 +26,7 @@ def apiaudio_create(scriptname, message):
                          }
 
     response = apiaudio.Speech().create(scriptId=script.get("scriptId"),
-                                        voice="klaus", speed="110", silence_padding=(1000 * 2))
+                                        voice="jenny", speed="110", silence_padding=(1000 * 2))
 
     print(response)
     if scriptname == "audio":
@@ -78,23 +78,21 @@ def download_create():
     text = """
         <<soundSegment::intro>>
         <<sectionName::intro>>
-        Die Leute fragen mich immmer wieder, Wird es einen Nachfolger geben?
+        Introducing Andril’s velvet sound noise canceling wireless headphones.
         <<soundSegment::main>>
         <<sectionName::main>>
-        Bart von Vertellis hier. Ja, Es wird einen Nachfolger für Tschäppters geben!
-        Du kennst Tschäppters noch nicht? Dann schaus dir unbedingt mal an.
-        Tschäppters ist unser meistverkauftes Tagebuch und verspricht weniger Stress, sowie bessere mentale Gesundheit.
-        Sogar das niederländische Fernsehen hat das gecheckt und bestätigt. Tschäppters gibt es mittlerweile in mehreren Sprachen.
-        Seit fast 5 Jahren arbeiten wir an einem Nachfolger und der ist noch besser und cooler geworden.
-        Aber wir brauchen deine Hilfe, denn ganz alleine können wir es nicht schaffen.<<soundSegment::outro>>
+        Matte black with soft cushion speakers and ergonomic swivel for a flexible fit.
+        Bluetooth compatible with real-time audio calibration for optimum musical clarity in range.
+        Perfect for working, relaxing or dancing.
+        Rechargeable battery for up to 20 hours of high quality sound.
+        Ultimate comfort and an ultimate immersive audio experience.
+        <<soundSegment::outro>>
         <<sectionName::outro>>
-        Seit Corona hatten wir eine schwierige Zeit. Nicht nur die Herstellungskosten sind in die Höhe geschossen.
-        Wir wollen wirklich etwas verändern, denn es ist unsere Mission, Menschen zu verbinden. Und mit deiner Hilfe können wir Tschäppters 2 herausbringen.
-        Klicke einfach hier, um mehr zu erfahren.
+        Only at anvil headphones dot com.
         """
 
     downloadyoutube("downloadedVideo.mp4",
-                    "https://youtu.be/qqYLSuHS2o4")
+                    "https://www.youtube.com/watch?v=0a61PF_OIKI&list=PLH1RT0tVZfnsAl-31IME-qykPP1zA_82u&index=1")
     tracks = ["speech", "audio"]
     for track in tracks:
         apiaudio_create(track, text)
