@@ -21,12 +21,12 @@ def apiaudio_create(scriptname, message):
     print(script)
 
     sectionProperties = {'intro': {"endAt": 6, 'justify': 'flex-start'},
-                         'main': {'endAt': 41, 'justify': 'flex-start'},
-                         'outro': {'endAt': 60, 'justify': 'flex-start'}
+                         'main': {'endAt': 31, 'justify': 'flex-start'},
+                         'outro': {'endAt': 34, 'justify': 'flex-start'}
                          }
 
     response = apiaudio.Speech().create(scriptId=script.get("scriptId"),
-                                        voice="jenny", speed="110", silence_padding=(1000 * 2))
+                                        voice="jenny", speed="105", silence_padding=(1000 * 2))
 
     print(response)
     if scriptname == "audio":
@@ -66,7 +66,7 @@ def combine_audio(video, speech):
     os.system(
         f'ffmpeg -i {speech} speech.wav')
     os.system(
-        f'ffmpeg -i {video} -filter:a "volume=0.3" videoextractaudio.wav')
+        f'ffmpeg -i {video} -filter:a "volume=0.0" videoextractaudio.wav')
     os.system(
         f'ffmpeg -i videoextractaudio.wav -i speech.wav -filter_complex amix=inputs=2:duration=first:dropout_transition=0 finalVideoAudio.wav')
     os.system(
@@ -78,12 +78,15 @@ def download_create():
     text = """
         <<soundSegment::intro>>
         <<sectionName::intro>>
-        Introducing Andril’s velvet sound noise canceling wireless headphones.
+        Introducing Anvil's velvet sound noise canceling wireless headphones.
+        <break time="2s"/>
         <<soundSegment::main>>
         <<sectionName::main>>
         Matte black with soft cushion speakers and ergonomic swivel for a flexible fit.
         Bluetooth compatible with real-time audio calibration for optimum musical clarity in range.
+        <break time="3s"/>
         Perfect for working, relaxing or dancing.
+        <break time="3s"/>
         Rechargeable battery for up to 20 hours of high quality sound.
         Ultimate comfort and an ultimate immersive audio experience.
         <<soundSegment::outro>>
