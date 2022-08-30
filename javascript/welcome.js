@@ -25,7 +25,7 @@ async function apiaudio_create() {
 
     let mastering = await apiaudio.Mastering.create({
       scriptId: script["scriptId"],
-      backgroundTrackId: "full__tropics.wav",
+      soundTemplate: "jakarta",
       audience: audience,
     });
     console.log(`Response from mastering: : ${mastering["Message"]}`);
