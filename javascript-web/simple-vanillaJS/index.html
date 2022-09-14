@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiAudio Browser Demo</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div class="col">
+      <h3>Api Audio - Browser Demo</h3>
+      <p>
+        1 - Provide your API key here. It should be kept private and not bundled
+        with the front end of your application. Sign up on
+        <a href="http://console.api.audio" target="_blank">console.api.audio</a>
+        for a free API key.
+      </p>
+      <label for="apikey">API Key:</label> <input id="apikey" />
+
+      <p>
+        2 - Write your script below
+      </p>
+      <label for="content">Script Content:</label>
+      <textarea id="content">
+This is a example of how API audio can be used in the browser. Paste your API key to get started!</textarea
+      >
+
+      <p>3 - Generate your audio by clicking the button below!</p>
+      <button id="generate">Generate Audio</button>
+
+      <p>4 - Listen</p>
+      <audio controls id="audio">
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
