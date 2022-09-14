@@ -1,4 +1,4 @@
-# helloworld-vanillaJS
+# simple-vanillaJS
 
 This is a simple demonstration of how to use the ApiAudio SDK in vanillaJS to do text-to-speech. You will need an API key to begin. Visit console.api.audio to get one for free!
 
