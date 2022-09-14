@@ -1,5 +1,5 @@
-import apiaudio from "apiaudio";
 import "./styles.css";
+import apiaudio from "apiaudio";
 
 const button = document.getElementById("generate");
 
@@ -16,7 +16,7 @@ button.onclick = async () => {
 
     // Generate a script using the value from the textarea
     let script = await apiaudio.Script.create({
-      scriptText,
+      scriptText
     });
     console.log(script);
 
@@ -24,13 +24,22 @@ button.onclick = async () => {
     let speech = await apiaudio.Speech.create({
       scriptId: script.scriptId,
       voice: "Joanna", // Check api.audio for a full list of voices
-      speed: "110",
+      speed: "110"
     });
     console.log(speech);
 
+    let mastering = await apiaudio.Mastering.create(
+      {scriptId: script["scriptId"],
+      soundTemplate: "citynights"}
+    )
+    console.log(mastering)
+    console.log(`Response from mastering: : ${mastering["Message"]}`);
+    let masteringResult = await apiaudio.Mastering.retrieve(
+      script["scriptId"]);
+    console.log(masteringResult["url"]);
     // Set the source of the audio player to our new file
     const audio = document.getElementById("audio");
-    audio.src = speech.default.url;
+    audio.src = masteringResult.url;
 
     // Reset
     apiaudio.reset();
