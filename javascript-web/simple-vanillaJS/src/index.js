@@ -30,7 +30,7 @@ button.onclick = async () => {
     let mastering = await apiaudio.Mastering.create({
       scriptId: script.scriptId,
       endFormat: "mp3",
-      soundTemplate: "citynights",
+      soundTemplate: "citynights", // Check api.audio for a full list of sound templates
     });
     console.log(mastering);
 
@@ -45,7 +45,12 @@ button.onclick = async () => {
     // Reset
     apiaudio.reset();
     button.innerText = "Generate Audio";
+
+    // Handle errors
   } catch (e) {
     console.log(e);
+    const errorElement = document.getElementById("error");
+    errorElement.innerText = e;
+    button.innerText = "Generate Audio";
   }
 };

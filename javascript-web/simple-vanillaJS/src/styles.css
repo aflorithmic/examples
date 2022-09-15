@@ -23,11 +23,15 @@ body {
   align-items: center;
 }
 
-p {
-  background-color: aliceblue;
+.box {
+  background-color: #E8EDFF;
   padding: 16px 24px;
   border-radius: 6px;
   line-height: 1.5rem;
+}
+
+#error {
+  color: #EA5858;
 }
 
 h3 {
@@ -41,7 +45,7 @@ img {
 
 input {
   border-radius: 6px;
-  border: 1px gainsboro solid;
+  border: 1px #D3D9E1 solid;
   padding-left: 12px;
   padding-right: 12px;
   font-size: 16px;
@@ -53,7 +57,7 @@ textarea {
   height: 150px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 6px;
-  border: 1px gainsboro solid;
+  border: 1px #D3D9E1 solid;
   padding: 12px;
   font-size: 16px;
 }
@@ -76,7 +80,7 @@ button {
 }
 
 button:hover {
-  background-color: blue;
+  background-color: #2438C2;
 }
 
 audio {
