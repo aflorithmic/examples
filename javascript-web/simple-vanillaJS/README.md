@@ -35,4 +35,4 @@ yarn start
 yarn build
 ```
 
-3. You can see an example [here](https://apiaudio-example.onrender.com/) of it in action on [Render](www.render.com)
+3. You can see an example [here](https://apiaudio-example.onrender.com/) of it in action on [Render](http://www.render.com)
