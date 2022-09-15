@@ -50,7 +50,10 @@ button.onclick = async () => {
   } catch (e) {
     console.log(e);
     const errorElement = document.getElementById("error");
-    errorElement.innerText = e;
+    if (e.message) errorElement.innerText = e.message;
+    else if (e.errors) errorElement.innerText = e.errors[0];
+    else errorElement.innerText = e;
     button.innerText = "Generate Audio";
+    apiaudio.reset();
   }
 };
