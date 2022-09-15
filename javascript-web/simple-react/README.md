@@ -2,7 +2,7 @@
 
 This is a simple demonstration of how to use the ApiAudio SDK in react to create text-to-speech. You will need an API key to begin. Visit console.api.audio to get one for free!
 
-This demo was created with ViteJs using the react template. The only other package include is our SDK, apiaudio.
+This demo was created with [ViteJs](https://vitejs.dev/) using the [react template](https://adiati.com/vite-with-react-template). The only other package included is our SDK, apiaudio.
 
 ## Get Started
 
@@ -32,4 +32,4 @@ yarn dev
 yarn build
 ```
 
-3. You can see an example [here](https://apiaudio-example.onrender.com/) of it in action on [Render](www.render.com)
+3. You can see an example [here](https://apiaudio-react-demo.onrender.com/) of it in action on [Render](www.render.com)
