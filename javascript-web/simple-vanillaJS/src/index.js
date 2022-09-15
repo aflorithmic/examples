@@ -1,5 +1,5 @@
-import "./styles.css";
 import apiaudio from "apiaudio";
+import "./styles.css";
 
 const button = document.getElementById("generate");
 
@@ -15,28 +15,29 @@ button.onclick = async () => {
     apiaudio.configure({ apiKey });
 
     // Generate a script using the value from the textarea
-    let script = await apiaudio.Script.create({
-      scriptText
-    });
+    let script = await apiaudio.Script.create({ scriptText });
     console.log(script);
 
     // Generate speech using the scriptId returned from the script endpoint
     let speech = await apiaudio.Speech.create({
       scriptId: script.scriptId,
       voice: "Joanna", // Check api.audio for a full list of voices
-      speed: "110"
+      speed: "110",
     });
     console.log(speech);
 
-    let mastering = await apiaudio.Mastering.create(
-      {scriptId: script["scriptId"],
-      soundTemplate: "citynights"}
-    )
-    console.log(mastering)
-    console.log(`Response from mastering: : ${mastering["Message"]}`);
-    let masteringResult = await apiaudio.Mastering.retrieve(
-      script["scriptId"]);
-    console.log(masteringResult["url"]);
+    // Master our file and convert it into an .mp3
+    let mastering = await apiaudio.Mastering.create({
+      scriptId: script.scriptId,
+      endFormat: "mp3",
+      soundTemplate: "citynights",
+    });
+    console.log(mastering);
+
+    // Retreive the final result
+    let masteringResult = await apiaudio.Mastering.retrieve(script.scriptId);
+    console.log(masteringResult);
+
     // Set the source of the audio player to our new file
     const audio = document.getElementById("audio");
     audio.src = masteringResult.url;
